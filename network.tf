@@ -3,9 +3,6 @@ variable "vpc_netmask" {
   default = "10.254.128.0/17"
 }
 
-locals {
-  office_ipv4_cidr = "185.98.189.64/29"
-}
 
 resource "aws_vpc" "ecs" {
   cidr_block                       = var.vpc_netmask
@@ -22,7 +19,7 @@ resource "aws_internet_gateway" "ecs_gw" {
 
   tags = {
     terraform = "true"
-    Name      = "ecs_gw"
+    Name      = "ecs gw"
   }
 }
 
@@ -82,7 +79,7 @@ resource "aws_route_table" "ecs_route_table" {
 
   tags = {
     terraform = "true"
-    Name      = "ecs_route_table"
+    Name      = "ecs route table"
   }
 }
 
