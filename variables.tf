@@ -1,6 +1,6 @@
 variable "instance_type" {
   type    = string
-  default = "t2.micro"
+  default = "t2.micro" # Possibly move to t3 instead
 }
 
 variable "assign_public_ipv4" {
@@ -12,6 +12,7 @@ variable "aws_region" {
  type = string
 }
 
+# Can add as many regions are needed
 variable "ami_map" {
  type = "map"
 
@@ -25,5 +26,3 @@ variable "ami_map" {
     ap-northeast-2 = "ami-07edd45f89412ebaf"
   }
 }
-
-
