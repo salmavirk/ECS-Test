@@ -17,8 +17,10 @@ Keep the private ket a secret. Alternatively you are able to connect to the inst
 EC2 instance connect through the console.
 
 ## Security Groups
+
 1 - A security group is created and attached to the instance. This allows SSH access
 and all egress traffic.
+
 2 - Another security group is created for the elastic load balancer which allows all traffic in from port
     8080.
 
