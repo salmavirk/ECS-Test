@@ -3,12 +3,11 @@ variable "vpc_netmask" {
   default = "10.254.128.0/17"
 }
 
-
 resource "aws_vpc" "ecs" {
   cidr_block                       = var.vpc_netmask
   assign_generated_ipv6_cidr_block = true
 
-  tags = {
+  tags        = {
     terraform = "true"
     Name      = "ecs_VPC"
   }
@@ -17,7 +16,7 @@ resource "aws_vpc" "ecs" {
 resource "aws_internet_gateway" "ecs_gw" {
   vpc_id = aws_vpc.ecs.id
 
-  tags = {
+  tags        = {
     terraform = "true"
     Name      = "ecs gw"
   }
